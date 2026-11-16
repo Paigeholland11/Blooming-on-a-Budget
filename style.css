@@ -1,0 +1,914 @@
+/* BRAND COLORS */
+:root {
+  --cream: #FAF7EF;
+  --sage: #E9EDDC;
+  --green: #4D624C;
+  --ink: #35483B;
+  --pink: #F1DED6;
+  --rose: #9B655C;
+  --line: #35483b2b;
+}
+
+/* BASE */
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 110px;
+}
+
+body {
+  margin: 0;
+  background: var(--cream);
+  color: var(--ink);
+  font-family: "Avenir Next", Avenir, "Segoe UI", sans-serif;
+  font-size: 17px;
+  line-height: 1.65;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+button,
+a,
+input,
+select,
+textarea {
+  -webkit-tap-highlight-color: transparent;
+}
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible,
+summary:focus-visible {
+  outline: 3px solid var(--rose);
+  outline-offset: 5px;
+}
+
+.wrap {
+  width: min(1180px, 88%);
+  margin-inline: auto;
+}
+
+.skip {
+  position: fixed;
+  top: -100px;
+  z-index: 10;
+  background: var(--ink);
+  color: white;
+  padding: 12px;
+}
+
+.skip:focus {
+  top: 0;
+}
+
+h1,
+h2,
+h3,
+p {
+  margin-top: 0;
+}
+
+h1 {
+  font-size: clamp(42px, 4.65vw, 66px);
+  letter-spacing: -1.9px;
+  line-height: 1.15;
+  font-weight: 700;
+  margin-bottom: 23px;
+}
+
+h2 {
+  font-size: clamp(35px, 3.6vw, 49px);
+  line-height: 1.2;
+  letter-spacing: -1.3px;
+  margin-bottom: 25px;
+}
+
+h3 {
+  font-size: 23px;
+  line-height: 1.35;
+  font-weight: 600;
+  margin-bottom: 13px;
+}
+
+em {
+  font-family: Georgia, serif;
+  color: var(--rose);
+  font-weight: 400;
+}
+
+h1 em {
+  font-size: 1.08em;
+}
+
+.eyebrow {
+  font-size: 13px;
+  letter-spacing: 1.4px;
+  text-transform: uppercase;
+  font-weight: 500;
+  margin: 0 0 22px;
+}
+
+.section {
+  padding-block: 95px;
+}
+
+.center {
+  text-align: center;
+}
+
+/* NAVIGATION */
+header {
+  background: var(--cream);
+  position: sticky;
+  top: 0;
+  z-index: 5;
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 108px;
+  border-bottom: 1px solid var(--line);
+  gap: 24px;
+}
+
+.brand {
+  font-size: 23px;
+  letter-spacing: 1.5px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+}
+
+nav > a:not(.button):hover,
+.text-link:hover {
+  color: var(--rose);
+}
+
+.menu {
+  display: none;
+}
+
+/* BUTTONS AND LINKS */
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 22px;
+  background: var(--green);
+  color: var(--cream);
+  padding: 16px 27px;
+  border: 1px solid transparent;
+  border-radius: 29px;
+  cursor: pointer;
+  line-height: 1.4;
+  transition: background 0.2s, transform 0.2s;
+}
+
+.button:hover {
+  background: var(--ink);
+  transform: translateY(-2px);
+}
+
+.button.small {
+  padding: 12px 27px;
+}
+
+.text-link {
+  font-weight: 600;
+  border: 0;
+  border-bottom: 1px solid var(--green);
+  padding: 0 0 5px;
+  background: none;
+  color: var(--ink);
+  cursor: pointer;
+}
+
+.text-link span {
+  margin-left: 12px;
+}
+
+/* Draw arrows with CSS so they work across fonts. */
+.button span,
+.services a span,
+.text-link span {
+  font-size: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 14px;
+  height: 14px;
+  flex-shrink: 0;
+}
+
+.button span::after,
+.services a span::after,
+.text-link span::after {
+  content: "";
+  display: block;
+  width: 7px;
+  height: 7px;
+  border-top: 1.5px solid currentColor;
+  border-right: 1.5px solid currentColor;
+  transform: rotate(45deg);
+}
+
+/* HOME */
+.hero {
+  display: grid;
+  grid-template-columns: 1.25fr 1fr;
+  gap: 60px;
+  align-items: center;
+  padding-top: 70px;
+  padding-bottom: 85px;
+}
+
+.intro {
+  font-size: 20px;
+  line-height: 1.6;
+  max-width: 540px;
+  margin-bottom: 25px;
+}
+
+.botanical {
+  position: relative;
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+  border-radius: 50% 50% 0 0;
+  background: var(--sage);
+}
+
+/* Displays the floral portion of the supplied homepage screenshot. */
+.botanical img {
+  position: static;
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  left: auto;
+  top: auto;
+}
+
+.ribbon {
+  background: var(--green);
+  color: var(--cream);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 50px;
+  padding: 22px;
+  font-size: 16px;
+  letter-spacing: 0.4px;
+}
+
+.flower {
+  font-family: Arial, "DejaVu Sans", sans-serif;
+  font-size: 23px;
+  color: #e1b4a5;
+}
+
+/* SERVICES */
+.section-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  gap: 80px;
+  margin-bottom: 44px;
+}
+
+.section-top h2 {
+  margin: 0;
+}
+
+.section-top > p {
+  max-width: 360px;
+  margin: 0 0 5px;
+}
+
+.services {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+}
+
+.services article {
+  border-top: 1px solid var(--line);
+  padding-top: 24px;
+  display: flex;
+  flex-direction: column;
+}
+
+.number {
+  color: var(--rose);
+  font-family: Georgia, serif;
+  font-size: 20px;
+  margin-bottom: 26px;
+}
+
+.services p {
+  font-size: 16px;
+  margin-bottom: 28px;
+}
+
+.services a {
+  font-size: 14px;
+  font-weight: 600;
+  margin-top: auto;
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.services a:hover {
+  color: var(--rose);
+}
+
+/* ABOUT */
+.about {
+  background: var(--pink);
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 100px;
+  padding-block: 80px;
+  align-items: center;
+}
+
+.quote {
+  border-right: 1px solid var(--line);
+  padding: 12px 45px 12px 10px;
+}
+
+.quote p {
+  font: 46px / 1.3 Georgia, serif;
+  margin: 26px 0 0;
+}
+
+.sprig {
+  font-family: Arial, "DejaVu Sans", sans-serif;
+  font-size: 68px;
+  line-height: 1.2;
+  color: var(--green);
+}
+
+.about-copy p {
+  max-width: 475px;
+}
+
+.signoff {
+  font: italic 24px Georgia, serif;
+  padding-top: 8px;
+}
+
+/* HOW IT WORKS */
+.steps {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 65px;
+  padding: 32px 0 0;
+  margin: 0;
+  list-style: none;
+}
+
+.steps li > span {
+  display: flex;
+  width: 47px;
+  height: 47px;
+  border: 1px solid var(--green);
+  border-radius: 50%;
+  align-items: center;
+  justify-content: center;
+  font: 22px Georgia, serif;
+  margin-bottom: 25px;
+}
+
+.steps p {
+  font-size: 16px;
+  margin: 0;
+}
+
+.steps h3 {
+  font-size: 21px;
+}
+
+/* PRICING */
+.pricing {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: start;
+  gap: 80px;
+  background: var(--sage);
+  padding: 60px 70px;
+  border-radius: 6px;
+}
+
+.pricing h2 {
+  margin: 0;
+}
+
+.pricing-intro > p:last-child {
+  margin-top: 25px;
+}
+
+.price-options article + article {
+  border-top: 1px solid var(--line);
+  margin-top: 28px;
+  padding-top: 28px;
+}
+
+.price-options .eyebrow {
+  margin-bottom: 8px;
+}
+
+.price-options h3 {
+  font-size: 22px;
+}
+
+.price {
+  display: block;
+  color: var(--rose);
+  font: italic 26px Georgia, serif;
+  margin-top: 8px;
+}
+
+.price-options p {
+  font-size: 15px;
+}
+
+/* QUESTIONS */
+.faq {
+  display: grid;
+  grid-template-columns: 0.9fr 1.2fr;
+  gap: 80px;
+}
+
+details {
+  border-bottom: 1px solid var(--line);
+  padding: 20px 0;
+}
+
+details:first-child {
+  border-top: 1px solid var(--line);
+}
+
+summary {
+  cursor: pointer;
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  font-weight: 600;
+}
+
+summary::-webkit-details-marker {
+  display: none;
+}
+
+summary span {
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 1;
+}
+
+details[open] summary span {
+  transform: rotate(45deg);
+}
+
+details p {
+  margin: 15px 28px 0 0;
+  font-size: 16px;
+}
+
+/* CONTACT */
+.contact {
+  background: var(--sage);
+  padding-block: 80px;
+}
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.1fr;
+  gap: 90px;
+}
+
+.contact-note {
+  font-size: 12px;
+  line-height: 1.6;
+  max-width: 320px;
+  padding-top: 28px;
+  color: #53604f;
+}
+
+.contact-note a {
+  text-decoration: underline;
+  font-weight: 600;
+}
+
+label {
+  display: block;
+  font-size: 14px;
+  font-weight: 500;
+  margin-bottom: 17px;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+}
+
+input,
+select,
+textarea {
+  display: block;
+  width: 100%;
+  background: var(--cream);
+  color: var(--ink);
+  border: 1px solid #35483b30;
+  border-radius: 5px;
+  padding: 12px 14px;
+  margin-top: 7px;
+  font-size: 15px;
+}
+
+textarea {
+  resize: vertical;
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: #6f786b;
+}
+
+.privacy {
+  font-size: 12px;
+  margin-top: -6px;
+}
+
+.contact .button {
+  font-size: 16px;
+}
+
+#draft {
+  border-top: 1px solid var(--line);
+  margin-top: 25px;
+  padding-top: 20px;
+  font-size: 14px;
+}
+
+#draft .text-link {
+  margin-top: 12px;
+}
+
+#copy-status {
+  display: block;
+  font-size: 13px;
+}
+
+#text-again {
+  margin-top: 12px;
+  margin-right: 15px;
+}
+
+/* FOOTER */
+footer {
+  display: flex;
+  justify-content: space-between;
+  gap: 25px;
+  padding-block: 38px;
+}
+
+footer p {
+  font-size: 12px;
+  line-height: 1.8;
+  margin: 8px 0 0;
+}
+
+.footer-right {
+  text-align: right;
+}
+
+.footer-right > a {
+  font-size: 13px;
+}
+
+/* LARGE SCREENS */
+@media (min-width: 1500px) {
+  .hero {
+    padding-block: 90px 105px;
+  }
+}
+
+/* TABLETS */
+@media (max-width: 1000px) {
+  .brand {
+    font-size: 19px;
+  }
+
+  nav {
+    gap: 18px;
+    font-size: 14px;
+  }
+
+  .hero {
+    gap: 32px;
+  }
+
+  h1 {
+    font-size: 48px;
+  }
+
+  .intro {
+    font-size: 18px;
+  }
+
+  .hero .button {
+    font-size: 15px;
+  }
+
+  .about-grid {
+    gap: 50px;
+  }
+
+  .services {
+    gap: 25px;
+  }
+
+  .pricing {
+    padding: 45px;
+    gap: 35px;
+  }
+
+  .contact-grid {
+    gap: 40px;
+  }
+
+  .ribbon {
+    gap: 25px;
+  }
+}
+
+/* PHONES */
+@media (max-width: 760px) {
+  html {
+    scroll-padding-top: 90px;
+  }
+
+  .wrap {
+    width: 88%;
+  }
+
+  .nav {
+    min-height: 82px;
+  }
+
+  .brand {
+    font-size: 17px;
+    letter-spacing: 0.7px;
+  }
+
+  .menu {
+    display: flex;
+    gap: 9px;
+    align-items: center;
+    border: 0;
+    background: none;
+    color: var(--ink);
+    font-size: 14px;
+    padding: 8px 0;
+    cursor: pointer;
+  }
+
+  nav {
+    display: none;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 82px;
+    background: var(--cream);
+    padding: 22px 6% 28px;
+    border-bottom: 1px solid var(--line);
+    align-items: stretch;
+    box-shadow: 0 10px 14px #35483b0a;
+  }
+
+  nav.open {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .hero {
+    grid-template-columns: 1fr;
+    padding-block: 42px 48px;
+    gap: 38px;
+  }
+
+  .eyebrow {
+    font-size: 11px;
+    margin-bottom: 18px;
+  }
+
+  h1 {
+    font-size: clamp(38px, 8.5vw, 56px);
+    letter-spacing: -1.2px;
+  }
+
+  h2 {
+    font-size: 36px;
+  }
+
+  .intro {
+    font-size: 17px;
+    max-width: 500px;
+  }
+
+  .hero .button {
+    font-size: 14px;
+    gap: 15px;
+    padding: 15px 20px;
+  }
+
+  .botanical {
+    width: 80%;
+    max-width: 370px;
+    justify-self: center;
+  }
+
+  .ribbon {
+    gap: 12px;
+    font-size: 11px;
+    padding: 18px 12px;
+    letter-spacing: 0;
+  }
+
+  .ribbon .flower {
+    font-size: 16px;
+  }
+
+  .section {
+    padding-block: 60px;
+  }
+
+  .section-top {
+    display: block;
+    margin-bottom: 32px;
+  }
+
+  .section-top > p {
+    margin-top: 20px;
+    max-width: 100%;
+  }
+
+  .services {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .number {
+    margin-bottom: 16px;
+  }
+
+  .services h3 {
+    font-size: 23px;
+  }
+
+  .services p {
+    margin-bottom: 20px;
+  }
+
+  .about-grid {
+    grid-template-columns: 1fr;
+    gap: 35px;
+    padding-block: 50px;
+  }
+
+  .quote {
+    border: 0;
+    border-bottom: 1px solid var(--line);
+    padding: 0 0 26px;
+  }
+
+  .quote p {
+    font-size: 37px;
+  }
+
+  .quote p br {
+    display: none;
+  }
+
+  .sprig {
+    font-size: 48px;
+  }
+
+  .about-copy h2 br {
+    display: none;
+  }
+
+  .steps {
+    grid-template-columns: 1fr;
+    gap: 30px;
+    padding-top: 20px;
+  }
+
+  .steps li {
+    padding-left: 65px;
+    position: relative;
+  }
+
+  .steps li > span {
+    position: absolute;
+    left: 0;
+    top: 0;
+  }
+
+  .center {
+    text-align: left;
+  }
+
+  .pricing {
+    grid-template-columns: 1fr;
+    gap: 26px;
+    padding: 32px 25px;
+  }
+
+  .pricing h2 br {
+    display: none;
+  }
+
+  .pricing .button {
+    font-size: 14px;
+    padding: 15px 17px;
+  }
+
+  .faq {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .faq h2 br {
+    display: none;
+  }
+
+  .contact {
+    padding-block: 55px;
+  }
+
+  .contact-grid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .contact-note {
+    max-width: none;
+    padding-top: 8px;
+  }
+
+  .form-row {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+
+  footer {
+    flex-direction: column;
+    padding-block: 30px;
+  }
+
+  .footer-right {
+    text-align: left;
+  }
+}
+
+/* REDUCED MOTION */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .button {
+    transition: none;
+  }
+}
